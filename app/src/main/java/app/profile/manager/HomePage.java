@@ -6,6 +6,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +17,23 @@ public class HomePage extends AppCompatActivity
     {
         super.onCreate(savedInstance);
         setContentView(R.layout.homepage);
+
+        TextView profileUsername = findViewById(R.id.profileUsername); // TextView to display username
+        DatabaseHandler dbHandler = new DatabaseHandler(this);
+
+        // Simulate logged-in username (this would come from your login logic)
+        String loggedInUsername = getIntent().getStringExtra("loggedInUsername");;
+
+        // Fetch username from database
+        String username = dbHandler.getUsername(loggedInUsername);
+
+        // Display username in TextView
+        if (username != null) {
+            profileUsername.setText("Welcome, " + username);
+        } else {
+            profileUsername.setText("Error: Username not found.");
+        }
+
     }
 
     public void showPopup(View v)

@@ -21,4 +21,10 @@
     <string name="doe">Doe</string>
     <string name="logout">Logout</string>
     <string name="kebabmenu_action">kebabmenu_action</string>
+    <string name="profile">PROFILE</string>
+    <string name="profile_information">Profile Information</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="reviews">Reviews</string>
+    <string name="profilepic">Profilepic</string>
+    <string name="username_will_appear_here">Username will appear here</string>
 </resources>

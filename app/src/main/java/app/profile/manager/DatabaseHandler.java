@@ -77,4 +77,26 @@ public class DatabaseHandler extends SQLiteOpenHelper
         return isValid;
     }
 
+    public String getUsername(String usernameInput) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        String username = null;
+
+        try {
+            cursor = db.rawQuery("SELECT username FROM USERS WHERE username = ?", new String[]{usernameInput});
+            if (cursor.moveToFirst()) {
+                username = cursor.getString(cursor.getColumnIndexOrThrow("username"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+
+        return username; // Returns null if no matching username is found
+    }
+
+
 }

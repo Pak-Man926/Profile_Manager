@@ -27,4 +27,5 @@
     <string name="reviews">Reviews</string>
     <string name="profilepic">Profilepic</string>
     <string name="username_will_appear_here">Username will appear here</string>
+    <string name="profile_picture">Profile Picture</string>
 </resources>
